@@ -1,0 +1,844 @@
+1. Python Basics
+</> The Python Interface
+Experiment in the IPython Shell; type 5 / 8, for example.
+
+Add another line of code to the Python script on the top-right (not in the Shell): print(7 + 10).
+
+Hit Submit Answer to execute the Python script and receive feedback.
+
+print(5 / 8)
+print(7 + 10)
+
+<script.py> output:
+    0.625
+    17
+
+
+</> When to use Python?
+Python is a pretty versatile language. For which applications can you use Python?
+
+ You want to do some quick calculations.
+ For your new business, you want to develop a database-driven website.
+ Your boss asks you to clean and analyze the results of the latest satisfaction survey
+ All of the above.
+</> Any comments?
+Above the print(7 + 10), add the comment # Addition.
+
+print(5 / 8)
+# Addition
+print(7 + 10)
+
+<script.py> output:
+    0.625
+    17
+
+
+</> Python as a calculator
+Suppose you have $100, which you can invest with a 10% return each year. After one year, it’s dollars, and after two years it’s . Add code to calculate how much money you end up with after 7 years, and print the result.
+
+print(5 + 5)
+print(5 - 5)
+print(3 * 5)
+print(10 / 2)
+print(18 % 7)
+print(4 ** 2)
+# How much is your $100 worth after 7 years?
+print(100 * 1.1 ** 7)
+
+<script.py> output:
+    10
+    0
+    15
+    5.0
+    4
+    16
+    194.87171000000012
+
+
+</> Variable Assignment
+Create a variable savings with the value 100.
+
+Check out this variable by typing print(savings) in the script.
+
+savings = 100
+print(savings)
+
+<script.py> output:
+    100
+
+
+</> Calculations with variables
+Create a variable growth_multiplier, equal to 1.1.
+
+Create a variable, result, equal to the amount of money you saved after 7 years.
+
+Print out the value of result.
+
+savings = 100
+growth_multiplier = 1.1
+result = savings * growth_multiplier ** 7
+print(result)
+
+<script.py> output:
+    194.87171000000012
+
+
+</> Other variable types
+Create a new string, desc, with the value “compound interest”.
+
+Create a new boolean, profitable, with the value True.
+
+desc = 'compound interest'
+profitable = True
+
+
+</> Guess the type
+We already went ahead and created three variables: a, b and c. You can use the IPython shell on the right to discover their type. Which of the following options is correct?
+
+ a is of type int, b is of type str, c is of type bool
+ a is of type float, b is of type bool, c is of type str
+ a is of type float, b is of type str, c is of type bool
+ a is of type int, b is of type bool, c is of type str
+In [1]: type(a)
+Out[1]: float
+
+In [2]: type(b)
+Out[2]: str
+
+In [3]: type(c)
+Out[3]: bool
+
+
+</> Operations with other types
+Calculate the product of savings and growth_multiplier. Store the result in year1.
+
+What do you think the resulting type will be? Find out by printing out the type of year1.
+
+Calculate the sum of desc and desc and store the result in a new variable doubledesc.
+
+Print out doubledesc. Did you expect this?
+
+savings = 100
+growth_multiplier = 1.1
+desc = "compound interest"
+
+year1 = savings * growth_multiplier
+print(type(year1))
+
+doubledesc = desc + desc
+print(doubledesc)
+
+<script.py> output:
+    <class 'float'>
+    compound interestcompound interest
+
+
+</> Type conversion
+Hit Run Code to run the code. Try to understand the error message.
+
+Fix the code such that the printout runs without errors; use the function str() to convert the variables to strings.
+
+Convert the variable pi_string to a float and store this float as a new variable, pi_float.
+
+savings = 100
+result = 100 * 1.10 ** 7
+print("I started with $" + str(savings) + " and now have $" + str(result) + ". Awesome!")
+
+pi_string = "3.1415926"
+pi_float = float(pi_string)
+
+<script.py> output:
+    I started with $100 and now have $194.87171000000012. Awesome!
+
+
+</> Can Python handle everything?
+Now that you know something more about combining different sources of information, have a look at the four Python expressions below. Which one of these will throw an error? You can always copy and paste this code in the IPython Shell to find out!
+
+ “I can add integers, like " + str(5) + " to strings.”
+ "I said " + ("Hey " * 2) + “Hey!”
+ "The correct answer to this multiple choice exercise is answer number " + 2
+ True + False
+In [1]: print("I can add integers, like " + str(5) + " to strings.")
+I can add integers, like 5 to strings.
+
+In [2]: print("I said " + ("Hey " * 2) + "Hey!")
+I said Hey Hey Hey!
+
+In [3]: print("The correct answer to this multiple choice exercise is answer number " + 2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    print("The correct answer to this multiple choice exercise is answer number " + 2)
+TypeError: must be str, not int
+
+In [4]: print(True + False)
+
+
+2. Python Lists
+</> Create a list
+Create a list, areas, that contains the area of the hallway (hall), kitchen (kit), living room (liv), bedroom (bed) and bathroom (bath), in this order. Use the predefined variables.
+
+Print areas with the print() function.
+
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+areas = [hall, kit, liv, bed, bath]
+print(areas)
+
+<script.py> output:
+    [11.25, 18.0, 20.0, 10.75, 9.5]
+
+
+</> Create list with different types
+Finish the line of code that creates the areas list. Build the list so that the list first contains the name of each room as a string and then its area. In other words, add the strings “hallway”, “kitchen” and “bedroom” at the appropriate locations.
+
+Print areas again; is the printout more informative this time?
+
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom",  bed, "bathroom", bath]
+print(areas)
+
+<script.py> output:
+    ['hallway', 11.25, 'kitchen', 18.0, 'living room', 20.0, 'bedroom', 10.75, 'bathroom', 9.5]
+
+
+</> Select the valid list
+Can you tell which ones of the following lines of Python code are valid ways to build a list?
+A. [1, 3, 4, 2]
+B. [[1, 2, 3], [4, 5, 7]]
+C. [1 + 2, “a” * 5, 3]
+
+ A, B and C
+ B
+ B and C
+ C
+</> List of lists
+Finish the list of lists so that it also contains the bedroom and bathroom data. Make sure you enter these in order!
+
+Print out house; does this way of structuring your data make more sense?
+
+Print out the type of house. Are you still dealing with a list?
+
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+house = [["hallway", hall],
+         ["kitchen", kit],
+         ["living room", liv],
+         ["bedroom", bed],
+         ["bathroom", bath]]
+
+print(house)
+print(type(house))
+
+<script.py> output:
+    [['hallway', 11.25], ['kitchen', 18.0], ['living room', 20.0], ['bedroom', 10.75], ['bathroom', 9.5]]
+    <class 'list'>
+
+
+</> Subset and conquer
+Print out the second element from the areas list (it has the value 11.25).
+
+Subset and print out the last element of areas, being 9.50. Using a negative index makes sense here!
+
+Select the number representing the area of the living room (20.0) and print it out.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+print(areas[1])
+print(areas[-1])
+print(areas[5])
+
+<script.py> output:
+    11.25
+    9.5
+    20.0
+
+
+</> Subset and calculate
+Using a combination of list subsetting and variable assignment, create a new variable, eat_sleep_area, that contains the sum of the area of the kitchen and the area of the bedroom.
+
+Print the new variable eat_sleep_area.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+eat_sleep_area = areas[3] + areas[7]
+
+print(eat_sleep_area)
+
+<script.py> output:
+    28.75
+
+
+</> Slicing and dicing
+Use slicing to create a list, downstairs, that contains the first 6 elements of areas.
+
+Do a similar thing to create a new variable, upstairs, that contains the last 4 elements of areas.
+
+Print both downstairs and upstairs using print().
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+downstairs = areas[0:6]
+upstairs = areas[6:]
+
+print(downstairs)
+print(upstairs)
+
+<script.py> output:
+    ['hallway', 11.25, 'kitchen', 18.0, 'living room', 20.0]
+    ['bedroom', 10.75, 'bathroom', 9.5]
+
+
+</> Slicing and dicing (2)
+Create downstairs again, as the first 6 elements of areas. This time, simplify the slicing by omitting the begin index.
+
+Create upstairs again, as the last 4 elements of areas. This time, simplify the slicing by omitting the end index.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+downstairs = areas[:6]
+upstairs = areas[6:]
+
+
+</> Subsetting lists of lists
+What will house[-1][1] return? house, the list of lists that you created before, is already defined for you in the workspace. You can experiment with it in the IPython Shell.
+
+ A float: the kitchen area
+ A string: “kitchen”
+ A float: the bathroom area
+ A string: “bathroom”
+In [1]: print(house[-1][1])
+9.5
+
+In [2]: print(house[-1])
+['bathroom', 9.5]
+
+
+</> Replace list elements
+Update the area of the bathroom area to be 10.50 square meters instead of 9.50.
+
+Make the areas list more trendy! Change “living room” to “chill zone”.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
+
+areas[-1] = 10.50
+areas[4] = "chill zone"
+
+
+</> Extend a list
+Use the + operator to paste the list [“poolhouse”, 24.5] to the end of the areas list. Store the resulting list as areas_1.
+
+Further extend areas_1 by adding data on your garage. Add the string “garage” and float 15.45. Name the resulting list areas_2.
+
+areas = ["hallway", 11.25, "kitchen", 18.0, "chill zone", 20.0,
+         "bedroom", 10.75, "bathroom", 10.50]
+
+areas_1 = areas + ["poolhouse", 24.5]
+areas_2 = areas_1 + ["garage", 15.45]
+
+
+</> Delete list elements
+The amount you won with the lottery is not that big after all and it looks like the poolhouse isn’t going to happen. You decide to remove the corresponding string and float from the areas list.
+
+Which of the code chunks will do the job for us?
+
+ del(areas[10]); del(areas[11])
+ del(areas[10:11])
+ del(areas[-4:-2]) (True)
+ del(areas[-3]); del(areas[-4])
+ 
+ 
+In [1]: areas = ["hallway", 11.25, "kitchen", 18.0,
+...         "chill zone", 20.0, "bedroom", 10.75,
+...          "bathroom", 10.50, "poolhouse", 24.5,
+...          "garage", 15.45]
+
+In [2]: del(areas[10]); del(areas[11])
+In [3]: print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 24.5, 15.45]
+
+In [6]: del(areas[10:11])
+In [7]: print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 24.5, 'garage', 15.45]
+
+In [9]: del(areas[-4:-2])
+In [10]: print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 10.5, 'garage', 15.45]
+
+In [13]: del(areas[-3]); del(areas[-4])
+In [14]: print(areas)
+['hallway', 11.25, 'kitchen', 18.0, 'chill zone', 20.0, 'bedroom', 10.75, 'bathroom', 'poolhouse', 'garage', 15.45]
+
+
+</> Inner workings of lists
+Change the second command, that creates the variable areas_copy, such that areas_copy is an explicit copy of areas. After your edit, changes made to areas_copy shouldn’t affect areas. Hit Submit Answer to check this.
+
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+areas_copy = list(areas)
+areas_copy[0] = 5.0
+
+print(areas)
+
+<script.py> output:
+    [11.25, 18.0, 20.0, 10.75, 9.5]
+
+
+3. Functions and Packages
+</> Familiar functions
+Use print() in combination with type() to print out the type of var1.
+
+Use len() to get the length of the list var1. Wrap it in a print() call to directly print it out.
+
+Use int() to convert var2 to an integer. Store the output as out2.
+
+var1 = [1, 2, 3, 4]
+var2 = True
+
+print(type(var1))
+print(len(var1))
+out2 = int(var2)
+
+<script.py> output:
+    <class 'list'>
+    4
+
+
+</> Help!
+Use the Shell on the right to open up the documentation on complex(). Which of the following statements is true?
+
+ complex() takes exactly two arguments: real and [, imag].
+ complex() takes two arguments: real and imag. Both these arguments are required.
+ complex() takes two arguments: real and imag. real is a required argument, imag is an optional argument.
+ complex() takes two arguments: real and imag. If you don’t specify imag, it is set to 1 by Python.
+help(complex)
+Help on class complex in module builtins:
+
+class complex(object)
+ |  complex(real[, imag]) -> complex number
+ |  
+ |  Create a complex number from a real part and an optional imaginary part.
+ |  This is equivalent to (real + imag*1j) where imag defaults to 0.
+...
+ |  Data descriptors defined here:
+ |  
+ |  imag
+ |      the imaginary part of a complex number
+ |  
+ |  real
+ |      the real part of a complex number
+
+
+</> Multiple arguments
+Use + to merge the contents of first and second into a new list: full.
+
+Call sorted() on full and specify the reverse argument to be True. Save the sorted list as full_sorted.
+
+Finish off by printing out full_sorted.
+
+first = [11.25, 18.0, 20.0]
+second = [10.75, 9.50]
+
+full = first + second
+full_sorted = sorted(full, reverse=True)
+
+print(full_sorted)
+
+<script.py> output:
+    [20.0, 18.0, 11.25, 10.75, 9.5]
+
+
+</> String Methods
+Use the upper() method on place and store the result in place_up. Use the syntax for calling methods that you learned in the previous video.
+
+Print out place and place_up. Did both change?
+
+Print out the number of o’s on the variable place by calling count() on place and passing the letter ‘o’ as an input to the method. We’re talking about the variable place, not the word “place”!
+
+place = "poolhouse"
+place_up = place.upper()
+
+print(place)
+print(place_up)
+print(place.count("o"))
+
+<script.py> output:
+    poolhouse
+    POOLHOUSE
+    3
+
+
+</> List Methods
+Use the index() method to get the index of the element in areas that is equal to 20.0. Print out this index.
+
+Call count() on areas to find out how many times 9.50 appears in the list. Again, simply print out this number.
+
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+print(areas.index(20.0))
+print(areas.count(9.50))
+
+<script.py> output:
+    2
+    1
+
+
+</> List Methods (2)
+Use append() twice to add the size of the poolhouse and the garage again: 24.5 and 15.45, respectively. Make sure to add them in this order.
+
+Print out areas
+
+Use the reverse() method to reverse the order of the elements in areas.
+
+Print out areas once more.
+
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+areas.append(24.5)
+areas.append(15.45)
+print(areas)
+
+areas.reverse()
+print(areas)
+
+<script.py> output:
+    [11.25, 18.0, 20.0, 10.75, 9.5, 24.5, 15.45]
+    [15.45, 24.5, 9.5, 10.75, 20.0, 18.0, 11.25]
+
+
+</> Import package
+Import the math package. Now you can access the constant pi with math.pi.
+
+Calculate the circumference of the circle and store it in C.
+
+Calculate the area of the circle and store it in A.
+
+r = 0.43
+import math
+C = 2 * math.pi * r
+A = math.pi * r ** 2
+
+print("Circumference: " + str(C))
+print("Area: " + str(A))
+
+<script.py> output:
+    Circumference: 2.701769682087222
+    Area: 0.5808804816487527
+
+
+</> Selective import
+Perform a selective import from the math package where you only import the radians function.
+
+Calculate the distance travelled by the Moon over 12 degrees of its orbit. Assign the result to dist. You can calculate this as r * phi, where r is the radius and phi is the angle in radians. To convert an angle in degrees to an angle in radians, use the radians() function, which you just imported.
+
+Print out dist.
+
+r = 192500
+from math import radians
+dist = r * radians(12)
+
+print(dist)
+
+<script.py> output:
+    40317.10572106901
+
+
+</> Different ways of importing
+Suppose you want to use the function inv(), which is in the linalg subpackage of the scipy package.
+
+Which import statement will you need in order to run the above code without an error?
+
+ import scipy
+ import scipy.linalg
+ from scipy.linalg import my_inv
+ from scipy.linalg import inv as my_inv
+4. NumPy
+</> Your First NumPy Array
+Import the numpy package as np, so that you can refer to numpy with np.
+
+Use np.array() to create a numpy array from baseball. Name this array np_baseball.
+
+Print out the type of np_baseball to check that you got it right.
+
+baseball = [180, 215, 210, 210, 188, 176, 209, 200]
+
+import numpy as np
+np_baseball = np.array(baseball)
+print(type(np_baseball))
+
+<script.py> output:
+    <class 'numpy.ndarray'>
+
+
+</> Baseball players’ height
+Create a numpy array from height_in. Name this new array np_height_in.
+
+Print np_height_in.
+
+Multiply np_height_in with 0.0254 to convert all height measurements from inches to meters. Store the new values in a new array, np_height_m.
+
+Print out np_height_m and check if the output makes sense.
+
+import numpy as np
+np_height_in = np.array(height_in)
+print(np_height_in)
+
+np_height_m = np_height_in * 0.0254
+print(np_height_m)
+
+<script.py> output:
+    [74 74 72 ... 75 75 73]
+    [1.8796 1.8796 1.8288 ... 1.905  1.905  1.8542]
+
+
+</> Baseball player’s BMI
+Create a numpy array from the weight_lb list with the correct units. Multiply by 0.453592 to go from pounds to kilograms. Store the resulting numpy array as np_weight_kg.
+
+Use np_height_m and np_weight_kg to calculate the BMI of each player. Use the following equation:
+
+
+Save the resulting numpy array as bmi.
+
+Print out bmi.
+
+import numpy as np
+np_height_m = np.array(height_in) * 0.0254
+np_weight_kg = np.array(weight_lb) * 0.453592
+bmi = np_weight_kg / np_height_m ** 2
+
+print(bmi)
+
+<script.py> output:
+    [23.11037639 27.60406069 28.48080465 ... 25.62295933 23.74810865
+     25.72686361]
+
+
+</> Lightweight baseball players
+Create a boolean numpy array: the element of the array should be True if the corresponding baseball player’s BMI is below 21. You can use the < operator for this. Name the array light.
+
+Print the array light.
+
+Print out a numpy array with the BMIs of all baseball players whose BMI is below 21. Use light inside square brackets to do a selection on the bmi array.
+
+import numpy as np
+np_height_m = np.array(height_in) * 0.0254
+np_weight_kg = np.array(weight_lb) * 0.453592
+bmi = np_weight_kg / np_height_m ** 2
+light = bmi < 21
+
+print(light)
+print(bmi[light])
+
+<script.py> output:
+    [False False False ... False False False]
+    [20.54255679 20.54255679 20.69282047 20.69282047 20.34343189 20.34343189
+     20.69282047 20.15883472 19.4984471  20.69282047 20.9205219 ]
+
+
+</> NumPy Side Effects
+Have a look at this line of code:
+np.array([True, 1, 2]) + np.array([3, 4, False])
+
+Can you tell which code chunk builds the exact same Python object?
+
+ np.array([True, 1, 2, 3, 4, False])
+ np.array([4, 3, 0]) + np.array([0, 2, 2])
+ np.array([1, 1, 2]) + np.array([3, 4, -1])
+ np.array([0, 1, 2, 3, 4, 5])
+In [1]: np.array([True, 1, 2, 3, 4, False])
+Out[1]: array([1, 1, 2, 3, 4, 0])
+
+In [2]: np.array([4, 3, 0]) + np.array([0, 2, 2])
+Out[2]: array([4, 5, 2])
+
+In [3]: np.array([1, 1, 2]) + np.array([3, 4, -1])
+Out[3]: array([4, 5, 1])
+
+In [4]: np.array([0, 1, 2, 3, 4, 5])
+Out[4]: array([0, 1, 2, 3, 4, 5])
+
+In [5]: np.array([True, 1, 2]) + np.array([3, 4, False])
+Out[5]: array([4, 5, 2])
+
+
+</> Subsetting NumPy Arrays
+Subset np_weight_lb by printing out the element at index 50.
+
+Print out a sub-array of np_height_in that contains the elements at index 100 up to and including index 110.
+
+import numpy as np
+np_weight_lb = np.array(weight_lb)
+np_height_in = np.array(height_in)
+
+print(np_weight_lb[50])
+print(np_height_in[100:111])
+
+<script.py> output:
+    200
+    [73 74 72 73 69 72 73 75 75 73 72]
+
+
+</> Your First 2D NumPy Array
+Use np.array() to create a 2D numpy array from baseball. Name it np_baseball.
+
+Print out the type of np_baseball.
+
+Print out the shape attribute of np_baseball. Use np_baseball.shape.
+
+baseball = [[180, 78.4],
+            [215, 102.7],
+            [210, 98.5],
+            [188, 75.2]]
+
+import numpy as np
+np_baseball = np.array(baseball)
+print(type(np_baseball))
+print(np_baseball.shape)
+
+<script.py> output:
+    <class 'numpy.ndarray'>
+    (4, 2)
+
+
+</> Baseball data in 2D form
+Use np.array() to create a 2D numpy array from baseball. Name it np_baseball.
+
+Print out the shape attribute of np_baseball.
+
+import numpy as np
+np_baseball = np.array(baseball)
+print(np_baseball.shape)
+
+<script.py> output:
+    (1015, 2)
+
+
+</> Subsetting 2D NumPy Arrays
+Print out the 50th row of np_baseball.
+
+Make a new variable, np_weight_lb, containing the entire second column of np_baseball.
+
+Select the height (first column) of the 124th baseball player in np_baseball and print it out.
+
+import numpy as np
+np_baseball = np.array(baseball)
+print(np_baseball[49])
+
+np_weight_lb = np_baseball[:,1]
+print(np_baseball[123,0])
+
+<script.py> output:
+    [ 70 195]
+    75
+
+
+</> 2D Arithmetic
+You managed to get hold of the changes in height, weight and age of all baseball players. It is available as a 2D numpy array, updated. Add np_baseball and updated and print out the result.
+
+You want to convert the units of height and weight to metric (meters and kilograms respectively). As a first step, create a numpy array with three values: 0.0254, 0.453592 and 1. Name this array conversion.
+
+Multiply np_baseball with conversion and print out the result.
+
+import numpy as np
+np_baseball = np.array(baseball)
+print(np_baseball + updated)
+
+conversion = [0.0254, 0.453592, 1.]
+print(np_baseball * conversion)
+
+<script.py> output:
+    [[ 75.2303559  168.83775102  23.99      ]
+     [ 75.02614252 231.09732309  35.69      ]
+     [ 73.1544228  215.08167641  31.78      ]
+     ...
+     [ 76.09349925 209.23890778  26.19      ]
+     [ 75.82285669 172.21799965  32.01      ]
+     [ 73.99484223 203.14402711  28.92      ]]
+    [[ 1.8796  81.64656 22.99   ]
+     [ 1.8796  97.52228 34.69   ]
+     [ 1.8288  95.25432 30.78   ]
+     ...
+     [ 1.905   92.98636 25.19   ]
+     [ 1.905   86.18248 31.01   ]
+     [ 1.8542  88.45044 27.92   ]]
+
+
+
+</> Average versus median
+Create numpy array np_height_in that is equal to first column of np_baseball.
+
+Print out the mean of np_height_in.
+
+Print out the median of np_height_in.
+
+import numpy as np
+np_height_in = np_baseball[:,0]
+
+print(np.mean(np_height_in))
+print(np.median(np_height_in))
+
+<script.py> output:
+    1586.4610837438424
+    74.0
+
+
+</> Explore the baseball data
+The code to print out the mean height is already included. Complete the code for the median height. Replace None with the correct code.
+
+Use np.std() on the first column of np_baseball to calculate stddev. Replace None with the correct code.
+
+Do big players tend to be heavier? Use np.corrcoef() to store the correlation between the first and second column of np_baseball in corr. Replace None with the correct code.
+
+import numpy as np
+avg = np.mean(np_baseball[:,0])
+print("Average: " + str(avg))
+
+med = np.median(np_baseball[:,0])
+print("Median: " + str(med))
+
+stddev = np.std(np_baseball[:,0])
+print("Standard Deviation: " + str(stddev))
+
+corr = np.corrcoef(np_baseball[:,0],np_baseball[:,1])
+print("Correlation: " + str(corr))
+
+<script.py> output:
+    Average: 73.6896551724138
+    Median: 74.0
+    Standard Deviation: 2.312791881046546
+    Correlation: [[1.         0.53153932]
+     [0.53153932 1.        ]]
+
+
+</> Blend it all together
+Convert heights and positions, which are regular lists, to numpy arrays. Call them np_heights and np_positions.
+
+Extract all the heights of the goalkeepers. You can use a little trick here: use np_positions == ‘GK’ as an index for np_heights. Assign the result to gk_heights.
+
+Extract all the heights of all the other players. This time use np_positions != ‘GK’ as an index for np_heights. Assign the result to other_heights.
+
+Print out the median height of the goalkeepers using np.median(). Replace None with the correct code.
+
+Do the same for the other players. Print out their median height. Replace None with the correct code.
+
+import numpy as np
+np_positions = np.array(positions)
+np_heights = np.array(heights)
+gk_heights = np_heights[np_positions == 'GK']
+other_heights = np_heights[np_positions != 'GK']
+
+print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+print("Median height of other players: " + str(np.median(other_heights)))
+
+<script.py> output:
+    Median height of goalkeepers: 188.0
+    Median height of other players: 181.0
+————————————————
